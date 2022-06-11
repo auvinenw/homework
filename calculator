@@ -1,0 +1,27 @@
+function calculateRectangleArea(width, height) {
+    return width * height;
+}
+
+function printRectangleArea(widthFromUser, heightFromUser) {
+    let area = calculateRectangleArea(widthFromUser, heightFromUser);
+    console.log('Suorakulmion pinta-ala on ' + area + ' neliömetriä.');
+}
+printRectangleArea(2, 4);
+
+
+function calculateCircleCircumference(radius) {
+  return 2 * 3.14 * radius;
+}
+
+function calculateCircleArea(radius) {
+  return 3.14 * (radius * radius);
+}
+
+function printCircleData(radiusFromUser) {
+  let circumference = calculateCircleCircumference(radiusFromUser);
+  let area = calculateCircleArea(radiusFromUser);
+  console.log('Ympyrän kehän pituus on ' + circumference + ' senttimetriä');
+  console.log('Ympyrän pinta-ala on ' + area + ' neliösenttimetriä.');
+}
+
+printCircleData(4);
