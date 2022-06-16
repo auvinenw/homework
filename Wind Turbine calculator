@@ -1,0 +1,34 @@
+/*Sen tulee antaa tilanneraportti joka turbiinista ja laskea turbiinien yhteensä generoima energia aktivoidessa kutakin turbiinia (esim. kolmatta turbiinia aktivoidessa, ohjelman pitäisi laskea kolmen ensimmäisen turbiinin generoima energia).
+Heillä on yhteensä 25 turbiinia.
+Tänään, ensimmäistä kymmentä turbiinia operoidaan täydellä teholla, jokaisen turbiinin generoidessa energiaa 2000 MWh:n arvosta. Seuraavat 10 turbiinia ajetaan puolella teholla, jokaisen generoidessa energiaa 1000 MWh:n arvosta. Viimeiset viisi turbiinia eivät ole käytössä.
+Ohjelman yksityiskohdat:
+
+Sen tulisi listata ensimmäiset kymmenen turbiinia konsoliin seuraavan viestin kera: "Turbiini numero X on käynnissä täydellä teholla, generoiden 2000 MWh. Farmin yhteensä generoima energia on tällä hetkellä Y MWh."
+Sen pitäisi listata toiset kymmenen turbiinia konsoliin seuraavan viestin kera: "Turbiini numero X on käynnissä puoliteholla, generoiden 1000 MWh. Farmin yhteensä generoima energia on tällä hetkellä Y MWh."
+Sen tulee listata viisi jäljelle jäävää turbiinia konsoliin seuraavan viestin kera: "Turbiini numero X ei ole käytössä, generoiden 0 MWh. Farmin yhteensä generoima energia on tällä hetkellä Y MWh."
+Käytä vain yhtä for -silmukkaa ratkaistaksesi tämän tehtävän ja käytä muuttujia numeroiden sijaan jokaisessa viestissä.*/
+
+var allTurbines = 25;
+var turbineCounter = 0;
+var turbinePower = 0;
+var sumPower = 0;
+
+for(var i = 0; i < allTurbines; i++) {
+  if(i < 10) {
+    turbineCounter++;
+    turbinePower = 2000;
+    sumPower += turbinePower;
+    console.log('turbiini numero ' + turbineCounter + ' on käynnissä täydellä teholla, genereoiden ' + turbinePower + ' MWh. Farmin generoima voima on yhteensä ' + sumPower + ' MWh.');
+  } else if(i < 20) {
+    turbineCounter++;
+    turbinePower = 1000;
+    sumPower += turbinePower;
+    console.log('turbiini numero ' + turbineCounter + ' on käynnissä puoliteholla, generoiden ' + turbinePower + ' MWh. Farmin generoima voima on yhteensä ' + sumPower + ' MWh.');
+  } else  if (i < 25) {turbineCounter++;
+    turbinePower = 0;
+    sumPower += turbinePower;
+    console.log('turbiini numero ' + turbineCounter + ' on pois päältä, generoiden 0 MWh. Farmin generoima voima on yhteensä ' + sumPower + ' MWh.');
+  } else {
+      console.log('Jotakin odottamatonta tapahtui.');
+  }
+}
